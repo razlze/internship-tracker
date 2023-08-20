@@ -1,12 +1,12 @@
-import SuitcaseIcon from "@mui/icons-material/BusinessCenterOutlined";
-import LocationIcon from "@mui/icons-material/FmdGoodOutlined";
-import SearchIcon from "@mui/icons-material/SearchOutlined";
-import { Grid, IconButton, useTheme } from "@mui/material";
-import React, { useState, useContext } from "react";
-import SearchResultsContext from "../contexts/SearchResultsContext";
-import { getSearchInternships } from "../utils/api";
+import SuitcaseIcon from '@mui/icons-material/BusinessCenterOutlined';
+import LocationIcon from '@mui/icons-material/FmdGoodOutlined';
+import SearchIcon from '@mui/icons-material/SearchOutlined';
+import { Grid, IconButton, useTheme } from '@mui/material';
+import React, { useContext, useState } from 'react';
 
-import IconTextField from "./IconTextField";
+import SearchResultsContext from '../contexts/SearchResultsContext';
+import { getSearchInternships } from '../utils/api';
+import IconTextField from './IconTextField';
 /**
  * https://github.com/BobaTalks/internship-tracker/issues/23
  * Search bar component should include the "what" and "where" inputs with a button to submit
@@ -14,8 +14,8 @@ import IconTextField from "./IconTextField";
  */
 const SearchBar = ({ isNarrow }) => {
   const theme = useTheme();
-  const [internship, setInternship] = useState("");
-  const [location, setLocation] = useState("");
+  const [internship, setInternship] = useState('');
+  const [location, setLocation] = useState('');
 
   const [searchResults, setSearchResults] = useContext(SearchResultsContext);
 
@@ -33,8 +33,8 @@ const SearchBar = ({ isNarrow }) => {
         md={isNarrow ? 7 : 8}
         pr={2}
         sx={{
-          [theme.breakpoints.down("md")]: {
-            paddingBottom: "1rem",
+          [theme.breakpoints.down('md')]: {
+            paddingBottom: '1rem',
           },
         }}
       >
@@ -58,14 +58,14 @@ const SearchBar = ({ isNarrow }) => {
           aria-label="search"
           onClick={handleClick}
           sx={{
-            bgcolor: "background.dark",
-            padding: "0.9rem",
-            border: "2px solid",
-            borderColor: "primary.dark",
-            "&:hover": {
-              transform: "scale(1.1)",
-              bgcolor: "background.dark",
-              transition: "transform .3s ease-out",
+            bgcolor: 'background.dark',
+            padding: '0.9rem',
+            border: '2px solid',
+            borderColor: 'primary.dark',
+            '&:hover': {
+              transform: 'scale(1.1)',
+              bgcolor: 'background.dark',
+              transition: 'transform .3s ease-out',
             },
           }}
         >
